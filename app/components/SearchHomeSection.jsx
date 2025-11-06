@@ -41,7 +41,7 @@ function HomeSearchSectionContent({
   textSize = ""
 }) {
   const searchParams = useSearchParams();
-  
+
   // URL se initial filters load karo
   const [filters, setFilters] = useState({
     location: 'all',
@@ -63,11 +63,11 @@ function HomeSearchSectionContent({
       length: searchParams.get('length') || 'all',
       budget: searchParams.get('budget') || 'all',
       passengers: searchParams.get('passengers') || 'all',
-      amenities: searchParams.getAll('amenities').length > 0 
-        ? searchParams.getAll('amenities') 
+      amenities: searchParams.getAll('amenities').length > 0
+        ? searchParams.getAll('amenities')
         : 'all'
     };
-    
+
     setFilters(filtersFromUrl);
   }, [searchParams]);
 
@@ -137,11 +137,11 @@ function HomeSearchSectionContent({
           position: "top-center",
           autoClose: 2000,
           hideProgressBar: true,
-          closeButton: false,  
-          closeOnClick: false,  
+          closeButton: false,
+          closeOnClick: false,
           pauseOnHover: false,
           draggable: false,
-          className: 'custom-toast-width', 
+          className: 'custom-toast-width',
           onClose: () => {
             setIsToastActive(false);
           }
@@ -202,11 +202,12 @@ function HomeSearchSectionContent({
           {showDivider && <div className="border-t border-gray-300" />}
 
           {/* Search Filters - URL se filters pass karo */}
-          <div className="sm:block hidden">
-            <SearchFilter 
-              onFilterChange={handleFilterChange} 
-              showClearAll={false} 
+          <div className="">
+            <SearchFilter
+              onFilterChange={handleFilterChange}
+              showClearAll={false}
               initialFilters={filters}
+              showMobileFilters={false}
             />
           </div>
 
@@ -216,8 +217,8 @@ function HomeSearchSectionContent({
               href={getSearchUrl()}
               onClick={handleSearchClick}
               className={`flex items-center gap-1 justify-center text-center text-base p-3 sm:w-auto w-full md:text-base font-medium rounded cursor-pointer hover:bg-opacity-90 transition duration-300 ${hasActiveFilters
-                  ? 'bg-text-secondary text-white hover:bg-text-primary'
-                  : 'bg-text-primary text-white hover:bg-text-secondary'
+                ? 'bg-text-secondary text-white hover:bg-text-primary'
+                : 'bg-text-primary text-white hover:bg-text-secondary'
                 }`}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

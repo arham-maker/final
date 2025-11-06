@@ -324,7 +324,7 @@ export default function CharterPageContent() {
           {/* Results Count */}
           {!showNoYachtsMessage && (
             <div className="text-base md:text-lg lg:text-xl tracking-wider font-light">
-              <span className="font-medium">{resultsCount}</span> yachts found matching your criteria
+              <span className="font-medium">{resultsCount}</span> Yachts Found 
             </div>
           )}
 

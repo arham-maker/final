@@ -295,6 +295,7 @@ const SearchFilter = ({
   className = "",
   showClearAll = true,
   initialFilters = {},
+  showMobileFilters = true, // Naya prop - default true rakha hai
 }) => {
   const searchParams = useSearchParams();
 
@@ -609,9 +610,11 @@ const SearchFilter = ({
 
   return (
     <>
-      {/* Desktop View */}
+      {/* Desktop View - HAMESHA show hoga (md:block) */}
       <div
-        className={`${FILTER_CONTAINER_STYLES.main} ${className} hidden md:block`}
+        className={`${FILTER_CONTAINER_STYLES.main} ${className} ${
+          showMobileFilters ? "hidden md:block" : "block"
+        }`}
       >
         {showClearAll && (
           <div className={FILTER_CONTAINER_STYLES.header}>
@@ -629,14 +632,16 @@ const SearchFilter = ({
         <DesktopFilterGrid />
       </div>
 
-      {/* Mobile Floating Button */}
-      <MobileFiltersButton
-        onClick={openMobileSheet}
-        activeFiltersCount={activeFiltersCount}
-      />
+      {/* Mobile Floating Button - CONDITIONALLY RENDER */}
+      {showMobileFilters && (
+        <MobileFiltersButton
+          onClick={openMobileSheet}
+          activeFiltersCount={activeFiltersCount}
+        />
+      )}
 
-      {/* Mobile Bottom Sheet */}
-      {isMobileSheetOpen && (
+      {/* Mobile Bottom Sheet - CONDITIONALLY RENDER */}
+      {isMobileSheetOpen && showMobileFilters && (
         <div className={MOBILE_STYLES.overlay} onClick={closeMobileSheet}>
           <div
             className={MOBILE_STYLES.sheet}
