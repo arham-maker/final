@@ -304,7 +304,7 @@ const ContactForm = ({ isOpen, onClose }) => {
             />
 
             <motion.div
-              className="fixed top-0 right-0 bottom-0 w-full md:max-w-[800px] max-w-xl bg-black z-[101] shadow-2xl overflow-y-auto"
+              className="fixed top-0 right-0 bottom-0 w-full max-w-xl bg-black z-[101] shadow-2xl overflow-y-auto"
               initial="closed"
               animate={isClosing ? "closed" : "open"}
               exit="closed"
@@ -355,7 +355,7 @@ const ContactForm = ({ isOpen, onClose }) => {
 
                   {/* Phone Field */}
                   <div>
-                    <label className="block text-sm font-medium text-white mb-2">
+                    <label className="text-base md:text-lg leading-relaxed tracking-wider font-light text-white mb-2">
                       Phone Number *
                     </label>
                     <div className="flex space-x-3">
@@ -390,7 +390,7 @@ const ContactForm = ({ isOpen, onClose }) => {
 
                   {/* Message Field */}
                   <div>
-                    <label className="block text-sm font-medium text-white mb-2">
+                    <label className="block text-base md:text-lg leading-relaxed tracking-wider font-light text-white mb-2">
                       Message *
                     </label>
                     <div className="relative">
@@ -488,7 +488,7 @@ const ContactForm = ({ isOpen, onClose }) => {
 // Reusable Form Field Component
 const FormField = ({ type, name, label, placeholder, icon: Icon, value, error, onChange, onBlur }) => (
   <div>
-    <label className="block text-sm font-medium text-white mb-2">
+    <label className="blocktext-base md:text-lg leading-relaxed tracking-wider font-light text-white mb-2">
       {label}
     </label>
     <div className="relative">

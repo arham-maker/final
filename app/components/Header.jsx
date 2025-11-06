@@ -13,7 +13,7 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      if (scrollTop > 100) {
+      if (scrollTop > 0) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -56,14 +56,14 @@ const Header = () => {
     closed: {
       opacity: 0,
       transition: {
-        duration: 0.3,
+        duration: 0.1,
         ease: "easeInOut"
       }
     },
     open: {
       opacity: 1,
       transition: {
-        duration: 0.3,
+        duration: 0.1,
         ease: "easeInOut"
       }
     }
