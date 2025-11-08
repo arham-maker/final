@@ -33,7 +33,7 @@ const STYLES = {
   inputLocked: "w-full px-4 py-3 border border-gray-200 rounded-lg bg-gray-50 cursor-not-allowed text-gray-600 text-base font-light tracking-wider",
   timeSlotsGrid: "grid grid-cols-3 gap-3 max-h-48 overflow-y-auto p-3 border border-gray-200 rounded-lg bg-gray-50",
   timeSlot: "px-3 py-2 text-base font-light tracking-wider border border-gray-300 rounded-lg text-center cursor-pointer hover:bg-white hover:border-blue-300 transition-all duration-200 bg-white",
-  timeSlotSelected: "px-3 py-2 text-base font-light tracking-wider border-2 border-blue-500 bg-blue-50 text-blue-700 rounded-lg text-center cursor-pointer",
+  timeSlotSelected: "px-3 py-2 text-base font-light tracking-wider border-2 border-[#c8a75c]-500 bg-[#c8a75c]-50 text-[#c8a75c] rounded-lg text-center cursor-pointer",
   buttonGroup: "flex gap-4 mt-8",
   // 
   button: "flex-1 p-3 text-base p-3 lg:w-2xs w-full md:text-base font-light tracking-wider rounded cursor-pointer rounded-lg font-semibold transition-all duration-300 transform  active:scale-95",
@@ -41,11 +41,11 @@ const STYLES = {
   buttonSecondary: "bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-300",
   buttonDisabled: "bg-gray-300 text-gray-400 cursor-not-allowed transform-none hover:scale-100",
   sliderContainer: "mt-4",
-  slider: "w-full h-3 bg-gray-200 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:bg-blue-600 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:border-4 [&::-webkit-slider-thumb]:border-white [&::-webkit-slider-thumb]:shadow-lg [&::-moz-range-thumb]:w-6 [&::-moz-range-thumb]:h-6 [&::-moz-range-thumb]:bg-blue-600 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:cursor-pointer [&::-moz-range-thumb]:border-4 [&::-moz-range-thumb]:border-white [&::-moz-range-thumb]:shadow-lg",
+  slider: "w-full h-3 bg-gray-200 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:bg-[#c8a75c] [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:border-4 [&::-webkit-slider-thumb]:border-white [&::-webkit-slider-thumb]:shadow-lg [&::-moz-range-thumb]:w-6 [&::-moz-range-thumb]:h-6 [&::-moz-range-thumb]:bg-blue-600 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:cursor-pointer [&::-moz-range-thumb]:border-4 [&::-moz-range-thumb]:border-white [&::-moz-range-thumb]:shadow-lg",
   sliderValue: "text-base font-light tracking-wider",
   sliderLabels: "flex justify-between text-xs text-gray-500",
   checkboxGroup: "flex flex-wrap gap-3 items-cemter",
-  checkboxLabel: "min-w-[120px] p-2 rounded border-2 border-gray-200 hover:border-blue-300 cursor-pointer transition-all duration-200 bg-white hover:shadow-md text-center",
+  checkboxLabel: "min-w-[120px] p-2 rounded border-2 border-gray-200 hover:border-blue-300 cursor-pointer transition-all duration-200 bg-white hover:shadow-md text-center ",
   checkboxSelected: "border-blue-500 bg-blue-50 shadow-md ",
   checkboxText: "flex flex-col items-center",
   checkboxDuration: "text-base font-light tracking-wider",
@@ -114,27 +114,28 @@ const calendarStyles = `
   }
   
   .react-calendar__tile--active {
-    background: #2563eb !important;
+    background: #c8a75c !important;
     color: white !important;
   }
   
   .react-calendar__tile--now {
-    background: #dbeafe !important;
-    color: #1e40af !important;
+    background: #fff !important;
+    color: #000 !important;
   }
   
   .react-calendar__tile:hover {
-    background: #dbeafe !important;
+    background: #c8a75c !important;
+    color: #fff !important;
   }
   
   .react-calendar__navigation button:enabled:hover,
   .react-calendar__navigation button:enabled:focus {
-    background: #dbeafe !important;
+    background: #c8a75c !important;
   }
   
   .react-calendar__tile--active:enabled:hover,
   .react-calendar__tile--active:enabled:focus {
-    background: #1d4ed8 !important;
+    background: #c8a75c !important;
   }
 `;
 
