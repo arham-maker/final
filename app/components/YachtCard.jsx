@@ -30,7 +30,7 @@ export default function YachtCard({ yacht }) {
                             </span>
                         )}
                     </div>
-
+                    <div className="border-t border-gray-200  my-1"></div>
                     <div className="flex justify-between items-center text-sm text-gray-600">
                         {location?.city && (
                             <div className="flex items-center flex-1 ">
