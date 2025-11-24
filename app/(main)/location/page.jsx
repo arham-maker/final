@@ -216,7 +216,7 @@ export default async function Location() {
               ))
             ) : (
               <div className="col-span-full text-center py-12">
-                <p className="text-gray-500 text-lg">
+                <p className="text-gray-500 text-lg tracking-wider">
                   No yachts available at the moment.
                 </p>
               </div>
