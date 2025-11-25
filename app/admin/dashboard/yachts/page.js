@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function YachtsManagement() {
   const [isReady, setIsReady] = useState(false);
@@ -343,12 +344,13 @@ export default function YachtsManagement() {
                   {filteredAndSortedYachts().map((yacht) => (
                     <tr key={yacht._id} className="hover:bg-gray-50 transition">
                       <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="h-20 w-28 flex items-center justify-center bg-gray-100 rounded-lg overflow-hidden border border-gray-200">
+                        <div className="h-20 w-28 flex items-center justify-center bg-gray-100 rounded-lg overflow-hidden border border-gray-200 relative">
                           {yacht.image ? (
-                            <img
+                            <Image
                               src={yacht.image}
                               alt={yacht.title}
-                              className="h-full w-full object-cover"
+                              fill
+                              className="object-cover"
                               onError={(e) => {
                                 e.target.style.display = 'none';
                                 e.target.nextSibling.style.display = 'flex';

@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function LocationsManagement() {
   const [isReady, setIsReady] = useState(false);
@@ -375,11 +376,12 @@ export default function LocationsManagement() {
                 {formData.image && (
                   <div className="mb-4">
                     <p className="text-sm text-gray-600 mb-2">Preview:</p>
-                    <div className="w-32 h-32 border rounded-lg overflow-hidden">
-                      <img 
+                    <div className="w-32 h-32 border rounded-lg overflow-hidden relative">
+                      <Image 
                         src={formData.image} 
                         alt="Preview" 
-                        className="w-full h-full object-cover"
+                        fill
+                        className="object-cover"
                         onError={(e) => {
                           e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik00NCA0NEg4NEM4Ni4yMDkxIDQ0IDg4IDQ1Ljc5MDkgODggNDhWODBDODggODIuMjA5MSA4Ni4yMDkxIDg0IDg0IDg0SDQ0QzQxLjc5MDkgODQgNDAgODIuMjA5MSA0MCA4MFY0OEM0MCA0NS43OTA5IDQxLjc5MDkgNDQgNDQgNDRaIiBmaWxsPSIjOEU5MEEzIi8+CjxjaXJjbGUgY3g9IjU2IiBjeT0iNTYiIHI9IjgiIGZpbGw9IiNGOEY5RkEiLz4KPHBhdGggZD0iTTg4IDg0TDEyOCA0NFY4MEMxMjggODIuMjA5MSAxMjYuMjA5MSA4NCAxMjQgODRIODhaIiBmaWxsPSIjOEU5MEEzIi8+Cjwvc3ZnPgo=';
                         }}
@@ -482,11 +484,12 @@ export default function LocationsManagement() {
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center space-x-3">
-                        <div className="w-16 h-16 border rounded overflow-hidden flex items-center justify-center bg-gray-100">
-                          <img 
+                        <div className="w-16 h-16 border rounded overflow-hidden flex items-center justify-center bg-gray-100 relative">
+                          <Image 
                             src={location.image} 
                             alt={location.title}
-                            className="w-full h-full object-cover"
+                            fill
+                            className="object-cover"
                             onError={(e) => {
                               e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0yMiAyMkg0MkM0My4xMDQ2IDIyIDQ0IDIyLjg5NTQgNDQgMjRWNDBDNDQgNDEuMTA0NiA0My4xMDQ2IDQyIDQyIDQySDIyQzIwLjg5NTQgNDIgMjAgNDEuMTA0NiAyMCA0MFYyNEMyMCAyMi44OTU0IDIwLjg5NTQgMjIgMjIgMjJaIiBmaWxsPSIjOEU5MEEzIi8+CjxjaXJjbGUgY3g9IjI4IiBjeT0iMjgiIHI9IjQiIGZpbGw9IiNGOEY5RkEiLz4KPHBhdGggZD0iTTQyIDQyTDY0IDIyVjQwQzY0IDQxLjEwNDYgNjMuMTA0NiA0MiA2MiA0Mkg0MloiIGZpbGw9IiM4RTkwQTMiLz4KPC9zdmc+Cg==';
                             }}

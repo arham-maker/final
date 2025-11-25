@@ -16,14 +16,8 @@ export default function SubscribersPage() {
 
   const router = useRouter();
 
-  useEffect(() => {
-    const loggedIn = localStorage.getItem('adminLoggedIn');
-    if (!loggedIn) router.push('/admin');
-    else fetchSubscribers();
-  }, [router]);
-
   // Safe JSON parser with error handling
-  const safeJsonParse = async (response) => {
+  const safeJsonParse = useCallback(async (response) => {
     try {
       const text = await response.text();
       if (!text) {
@@ -37,9 +31,42 @@ export default function SubscribersPage() {
         error: 'Invalid response format from server'
       };
     }
-  };
+  }, []);
 
-  const fetchSubscribers = async () => {
+  const fetchSubscribers = useCallback(async () => {
+    try {
+      setIsLoading(true);
+      setError(null);
+
+      const response = await fetch('/api/subscribers');
+
+      if (!response.ok) {
+        const errorData = await safeJsonParse(response);
+        throw new Error(errorData.error || `Server error: ${response.status}`);
+      }
+
+      const data = await safeJsonParse(response);
+
+      if (data.success) {
+        setSubscribers(data.data || []);
+      } else {
+        throw new Error(data.error || 'Failed to fetch subscribers');
+      }
+    } catch (error) {
+      console.error('Fetch subscribers error:', error);
+      const errorMessage = error.message || 'Network error. Please check your connection.';
+      setError(errorMessage);
+      toast.error(errorMessage);
+    } finally {
+      setIsLoading(false);
+    }
+  }, [safeJsonParse]);
+
+  useEffect(() => {
+    const loggedIn = localStorage.getItem('adminLoggedIn');
+    if (!loggedIn) router.push('/admin');
+    else fetchSubscribers();
+  }, [router, fetchSubscribers]);
     try {
       setIsLoading(true);
       setError(null);

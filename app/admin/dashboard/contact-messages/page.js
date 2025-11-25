@@ -111,7 +111,7 @@ export default function ContactMessagesPage() {
     return result;
   }, [messages, searchTerm, statusFilter, sortOrder]);
 
-  const formatDate = (dateString) => {
+  const formatDate = useCallback((dateString) => {
     try {
       return new Date(dateString).toLocaleString("en-IN", {
         year: "numeric",
@@ -123,7 +123,7 @@ export default function ContactMessagesPage() {
     } catch {
       return "Invalid Date";
     }
-  };
+  }, []);
 
   const handleExport = useCallback(() => {
     if (filteredMessages.length === 0) {
