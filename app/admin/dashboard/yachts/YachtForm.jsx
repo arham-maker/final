@@ -1293,7 +1293,7 @@ export default function YachtForm({ yachtId, initialData = null }) {
                   placeholder="Boat name"
                 />
               </div>
-              <div>
+              {/* <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2 tracking-wide">Owner Name/Entity/LLC</label>
                 <input
                   type="text"
@@ -1336,7 +1336,7 @@ export default function YachtForm({ yachtId, initialData = null }) {
                   className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm tracking-wide focus:outline-none focus:ring-2 focus:ring-[#c8a75c] focus:border-transparent transition"
                   placeholder="Phone number"
                 />
-              </div>
+              </div> */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2 tracking-wide">Contact Person for Charters</label>
                 <input
