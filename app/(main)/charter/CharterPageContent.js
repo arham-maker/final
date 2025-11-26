@@ -35,8 +35,7 @@ async function getYachts() {
 // Client-side function that fetches locations from database
 async function getLocations(limit = 6) {
   try {
-    const response = await fetch('/api/locations', { 
-      cache: 'no-store',
+    const response = await fetch('/api/locations', {  
       headers: {
         'Content-Type': 'application/json',
       },
