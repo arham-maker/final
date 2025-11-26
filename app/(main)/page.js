@@ -116,7 +116,7 @@ async function getYachts(limit = null) {
 
 // Server component that fetches locations from database
 async function getLocations(limit = 6) {
-  try {
+  try { 
     const apiUrl = getApiUrl('/api/locations');
     
     const response = await fetch(apiUrl, {
