@@ -248,7 +248,7 @@ import WhyHalaYachts from "../../components/WhyHalaYachts";
 import YachtCard from "../../components/YachtCard";
 import { GoArrowUpRight } from "react-icons/go";
 import Link from "next/link";
-import SearchHomeSection from "../components/SearchHomeSection";
+import SearchHomeSection from "../../components/SearchHomeSection";
 import LocationCard from "../../components/LocationCard";
 import { connectToDatabase } from '@/lib/mongodb';
 
